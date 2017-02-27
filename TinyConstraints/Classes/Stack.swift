@@ -39,20 +39,20 @@ public extension UIView {
             
             switch axis {
             case .vertical:
-                constraints.append(view.top(to: previous ?? self, previous?.bottomAnchor ?? topAnchor, offset: offset))
-                constraints.append(view.left(to: self))
-                constraints.append(view.right(to: self))
+                constraints.append(view.top(to: previous ?? self, (previous != nil) ? .bottom : .top, offset: offset))
+                constraints.append(view.left(to: self, .left))
+                constraints.append(view.right(to: self, .right))
                 
                 if let lastView = views.last, view == lastView {
-                    constraints.append(view.bottom(to: self))
+                    constraints.append(view.bottom(to: self, .bottom))
                 }
             case .horizontal:
-                constraints.append(view.top(to: self))
-                constraints.append(view.bottom(to: self))
-                constraints.append(view.left(to: previous ?? self, previous?.rightAnchor ?? leftAnchor, offset: offset))
+                constraints.append(view.top(to: self, .top))
+                constraints.append(view.bottom(to: self, .bottom))
+                constraints.append(view.left(to: previous ?? self, (previous != nil) ? .right : .left, offset: offset))
                 
                 if let lastView = views.last, view == lastView {
-                    constraints.append(view.right(to: self))
+                    constraints.append(view.right(to: self, .right))
                 }
             }
             
