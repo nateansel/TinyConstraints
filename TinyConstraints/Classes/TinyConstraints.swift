@@ -151,14 +151,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    @available(iOS 9.0, *)
-    public func width(to view: Constrainable, _ dimension: NSLayoutDimension? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = widthAnchor.constraint(equalTo: dimension ?? view.widthAnchor, constant: offset).with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func width(to view: Constrainable, _ attribute: NSLayoutAttribute = .width, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -223,14 +215,6 @@ public extension Constrainable {
                 multiplier: 1,
                 constant: height)
                 .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
-    @available(iOS 9.0, *)
-    public func height(to view: Constrainable, _ dimension: NSLayoutDimension? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = heightAnchor.constraint(equalTo: dimension ?? view.heightAnchor, constant: offset).with(priority)
         constraint.isActive = isActive
         return constraint
     }
@@ -305,14 +289,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    @available(iOS 9.0, *)
-    public func leading(to view: Constrainable, _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = leadingAnchor.constraint(equalTo: anchor ?? view.leadingAnchor, constant: offset).with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func leading(to view: Constrainable, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -324,14 +300,6 @@ public extension Constrainable {
                 multiplier: 1,
                 constant: offset)
                 .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
-    @available(iOS 9.0, *)
-    public func left(to view: Constrainable, _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = leftAnchor.constraint(equalTo: anchor ?? view.leftAnchor, constant: offset).with(priority)
         constraint.isActive = isActive
         return constraint
     }
@@ -353,14 +321,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    @available(iOS 9.0, *)
-    public func trailing(to view: Constrainable, _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = trailingAnchor.constraint(equalTo: anchor ?? view.trailingAnchor, constant: offset).with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func trailing(to view: Constrainable, _ attribute: NSLayoutAttribute = .trailing, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -372,14 +332,6 @@ public extension Constrainable {
                 multiplier: 1,
                 constant: offset)
                 .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
-    @available(iOS 9.0, *)
-    public func right(to view: Constrainable, _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = rightAnchor.constraint(equalTo: anchor ?? view.rightAnchor, constant: offset).with(priority)
         constraint.isActive = isActive
         return constraint
     }
@@ -401,14 +353,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    @available(iOS 9.0, *)
-    public func top(to view: Constrainable, _ anchor: NSLayoutYAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = topAnchor.constraint(equalTo: anchor ?? view.topAnchor, constant: offset).with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func top(to view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -420,14 +364,6 @@ public extension Constrainable {
                 multiplier: 1,
                 constant: offset)
                 .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
-    @available(iOS 9.0, *)
-    public func bottom(to view: Constrainable, _ anchor: NSLayoutYAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = bottomAnchor.constraint(equalTo: anchor ?? view.bottomAnchor, constant: offset).with(priority)
         constraint.isActive = isActive
         return constraint
     }
@@ -449,14 +385,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    @available(iOS 9.0, *)
-    public func bottom(lessThan view: Constrainable, _ anchor: NSLayoutYAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = bottomAnchor.constraint(lessThanOrEqualTo: anchor ?? view.bottomAnchor, constant: offset).with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func bottom(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -468,14 +396,6 @@ public extension Constrainable {
                 multiplier: 1,
                 constant: offset)
                 .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
-    @available(iOS 9.0, *)
-    public func bottom(greaterThan view: Constrainable, _ anchor: NSLayoutYAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = bottomAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.bottomAnchor, constant: offset).with(priority)
         constraint.isActive = isActive
         return constraint
     }
@@ -497,14 +417,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    @available(iOS 9.0, *)
-    public func centerX(to view: Constrainable, _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = centerXAnchor.constraint(equalTo: anchor ?? view.centerXAnchor, constant: offset).with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func centerX(to view: Constrainable, _ attribute: NSLayoutAttribute = .centerX, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -516,14 +428,6 @@ public extension Constrainable {
                 multiplier: 1,
                 constant: offset)
                 .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
-    @available(iOS 9.0, *)
-    public func centerY(to view: Constrainable, _ anchor: NSLayoutYAxisAnchor? = nil, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint = centerYAnchor.constraint(equalTo: anchor ?? view.centerYAnchor, constant: offset).with(priority)
         constraint.isActive = isActive
         return constraint
     }
