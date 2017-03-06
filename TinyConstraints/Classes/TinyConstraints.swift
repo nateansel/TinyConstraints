@@ -321,6 +321,38 @@ public extension Constrainable {
     }
     
     @discardableResult
+    public func left(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+        let constraint =
+            NSLayoutConstraint(
+                item: self,
+                attribute: .left,
+                relatedBy: .lessThanOrEqual,
+                toItem: view,
+                attribute: attribute,
+                multiplier: 1,
+                constant: offset)
+                .with(priority)
+        constraint.isActive = isActive
+        return constraint
+    }
+    
+    @discardableResult
+    public func left(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+        let constraint =
+            NSLayoutConstraint(
+                item: self,
+                attribute: .left,
+                relatedBy: .greaterThanOrEqual,
+                toItem: view,
+                attribute: attribute,
+                multiplier: 1,
+                constant: offset)
+                .with(priority)
+        constraint.isActive = isActive
+        return constraint
+    }
+    
+    @discardableResult
     public func trailing(to view: Constrainable, _ attribute: NSLayoutAttribute = .trailing, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
@@ -353,12 +385,76 @@ public extension Constrainable {
     }
     
     @discardableResult
+    public func right(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+        let constraint =
+            NSLayoutConstraint(
+                item: self,
+                attribute: .right,
+                relatedBy: .lessThanOrEqual,
+                toItem: view,
+                attribute: attribute,
+                multiplier: 1,
+                constant: offset)
+                .with(priority)
+        constraint.isActive = isActive
+        return constraint
+    }
+    
+    @discardableResult
+    public func right(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+        let constraint =
+            NSLayoutConstraint(
+                item: self,
+                attribute: .right,
+                relatedBy: .greaterThanOrEqual,
+                toItem: view,
+                attribute: attribute,
+                multiplier: 1,
+                constant: offset)
+                .with(priority)
+        constraint.isActive = isActive
+        return constraint
+    }
+    
+    @discardableResult
     public func top(to view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
                 attribute: .top,
                 relatedBy: .equal,
+                toItem: view,
+                attribute: attribute,
+                multiplier: 1,
+                constant: offset)
+                .with(priority)
+        constraint.isActive = isActive
+        return constraint
+    }
+    
+    @discardableResult
+    public func top(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+        let constraint =
+            NSLayoutConstraint(
+                item: self,
+                attribute: .top,
+                relatedBy: .lessThanOrEqual,
+                toItem: view,
+                attribute: attribute,
+                multiplier: 1,
+                constant: offset)
+                .with(priority)
+        constraint.isActive = isActive
+        return constraint
+    }
+    
+    @discardableResult
+    public func top(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+        let constraint =
+            NSLayoutConstraint(
+                item: self,
+                attribute: .top,
+                relatedBy: .greaterThanOrEqual,
                 toItem: view,
                 attribute: attribute,
                 multiplier: 1,
