@@ -236,22 +236,6 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func height(to view: Constrainable, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
-        let constraint =
-            NSLayoutConstraint(
-                item: self,
-                attribute: .height,
-                relatedBy: .equal,
-                toItem: view,
-                attribute: .height,
-                multiplier: 1,
-                constant: offset)
-                .with(priority)
-        constraint.isActive = isActive
-        return constraint
-    }
-    
-    @discardableResult
     public func height(min: CGFloat? = nil, max: CGFloat? = nil, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraints {
         var constraints: Constraints = []
         
