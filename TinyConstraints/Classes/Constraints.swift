@@ -37,6 +37,8 @@ public enum ConstraintPriority: UILayoutPriority {
     public var value: UILayoutPriority {
         return rawValue
     }
+  
+  public static var defaultValue: ConstraintPriority = .required
 }
 
 public extension Collection where Iterator.Element == Constraint {

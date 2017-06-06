@@ -27,7 +27,7 @@ import UIKit
 public extension Constrainable {
     
     @discardableResult
-    public func center(in view: Constrainable, offset: CGPoint = .zero, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraints {
+    public func center(in view: Constrainable, offset: CGPoint = .zero, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraints {
         let constraints = [
             NSLayoutConstraint(
                 item: self,
@@ -57,7 +57,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func edges(to view: Constrainable, insets: UIEdgeInsets = .zero, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraints {
+    public func edges(to view: Constrainable, insets: UIEdgeInsets = .zero, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraints {
         let constraints = [
             NSLayoutConstraint(
                 item: self,
@@ -105,7 +105,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func size(_ size: CGSize, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraints {
+    public func size(_ size: CGSize, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraints {
         let constraints = [
             NSLayoutConstraint(
                 item: self,
@@ -135,7 +135,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func width(_ width: CGFloat, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func width(_ width: CGFloat, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -151,7 +151,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func width(to view: Constrainable, _ attribute: NSLayoutAttribute = .width, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func width(to view: Constrainable, _ attribute: NSLayoutAttribute = .width, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -167,7 +167,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func width(min: CGFloat? = nil, max: CGFloat? = nil, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraints {
+    public func width(min: CGFloat? = nil, max: CGFloat? = nil, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraints {
         var constraints: Constraints = []
         
         if let min = min {
@@ -204,7 +204,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func height(_ height: CGFloat, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func height(_ height: CGFloat, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -220,7 +220,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func height(to view: Constrainable, _ attribute: NSLayoutAttribute = .height, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func height(to view: Constrainable, _ attribute: NSLayoutAttribute = .height, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -236,7 +236,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func height(min: CGFloat? = nil, max: CGFloat? = nil, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraints {
+    public func height(min: CGFloat? = nil, max: CGFloat? = nil, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraints {
         var constraints: Constraints = []
         
         if let min = min {
@@ -273,7 +273,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func leading(to view: Constrainable, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func leading(to view: Constrainable, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -289,7 +289,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func left(to view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func left(to view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -305,7 +305,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func left(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func left(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -321,7 +321,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func left(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func left(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .left, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -337,7 +337,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func trailing(to view: Constrainable, _ attribute: NSLayoutAttribute = .trailing, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func trailing(to view: Constrainable, _ attribute: NSLayoutAttribute = .trailing, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -353,7 +353,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func right(to view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func right(to view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -369,7 +369,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func right(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func right(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -385,7 +385,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func right(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func right(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .right, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -401,7 +401,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func top(to view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func top(to view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -417,7 +417,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func top(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func top(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -433,7 +433,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func top(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func top(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .top, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -449,7 +449,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func bottom(to view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func bottom(to view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -465,7 +465,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func bottom(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func bottom(lessThan view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -481,7 +481,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func bottom(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func bottom(greaterThan view: Constrainable, _ attribute: NSLayoutAttribute = .bottom, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -497,7 +497,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func centerX(to view: Constrainable, _ attribute: NSLayoutAttribute = .centerX, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func centerX(to view: Constrainable, _ attribute: NSLayoutAttribute = .centerX, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
@@ -513,7 +513,7 @@ public extension Constrainable {
     }
     
     @discardableResult
-    public func centerY(to view: Constrainable, _ attribute: NSLayoutAttribute = .centerY, offset: CGFloat = 0, priority: ConstraintPriority = .high, isActive: Bool = true) -> Constraint {
+    public func centerY(to view: Constrainable, _ attribute: NSLayoutAttribute = .centerY, offset: CGFloat = 0, priority: ConstraintPriority = .defaultValue, isActive: Bool = true) -> Constraint {
         let constraint =
             NSLayoutConstraint(
                 item: self,
